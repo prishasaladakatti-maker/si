@@ -1,0 +1,21 @@
+def is_palindrome(text):
+    
+    cleaned_text = "".join(char.lower() for char in text if char.isalnum())
+    
+
+    return cleaned_text == cleaned_text[::-1]
+
+if __name__ == "__main__":
+    
+    test_strings = [
+        "A man, a plan, a canal: Panama",
+        "racecar",
+        "hello",
+        "Was it a car or a cat I saw?"
+    ]
+    
+    for s in test_strings:
+        if is_palindrome(s):
+            print(f"'{s}' -> Is a palindrome")
+        else:
+            print(f"'{s}' -> Is NOT a palindrome")
